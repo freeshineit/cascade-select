@@ -51,8 +51,8 @@ function addOptions(self, children) {
         }
         newProps.onChange = self.select.bind(self, i);
         newProps.value = v;
-        var options = [<option value="">{self.props.allText}</option>].concat(data.map((d) => {
-          return <option value={d.value}>{d.name}</option>;
+        var options = [<option value="" key="">{self.props.allText}</option>].concat(data.map((d) => {
+          return <option key={d.value} value={d.value}>{d.name}</option>;
         }));
         c = React.cloneElement(c, newProps, options);
         i++;
